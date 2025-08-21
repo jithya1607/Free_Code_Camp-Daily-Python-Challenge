@@ -1,0 +1,9 @@
+def mile_pace(miles, duration):
+
+        m,s=map(int,duration.split(':'))
+        tt=60*m+s
+        at_m_s=tt//miles
+        at_m=int(at_m_s//60)
+        at_s=int(round(at_m_s%60))
+        a=f'{at_m:02d}:{at_s:02d}'
+        return a
