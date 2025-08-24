@@ -1,0 +1,13 @@
+def is_unnatural_prime(n):
+
+    a=True
+
+    if abs(n)==1 or n==0:
+        a=False
+
+    if abs(n)>1:
+        for i in range (2,abs(n)):
+            if (abs(n))%i==0:
+                a=False
+
+    return a
