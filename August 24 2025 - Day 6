@@ -1,0 +1,39 @@
+def battle(my_army, opposing_army):
+    import string
+
+    # build dictionaries
+    l_c = {ch: i+1 for i, ch in enumerate(string.ascii_lowercase)}
+    u_c = {ch: i+27 for i, ch in enumerate(string.ascii_uppercase)}
+    num = {str(i): i for i in range(10)}
+
+    values = {}
+    values.update(l_c)
+    values.update(u_c)
+    values.update(num)
+
+    # retreat cases
+    if len(my_army) > len(opposing_army):
+        return "Opponent retreated"
+    elif len(my_army) < len(opposing_army):
+        return "We retreated"
+
+    # same length → battle per character
+    my_score = 0
+    opp_score = 0
+
+    for char, ch in zip(my_army, opposing_army):
+        my_val = values.get(char, 0)
+        opp_val = values.get(ch, 0)
+
+        if my_val > opp_val:
+            my_score += 1
+        elif opp_val > my_val:
+            opp_score += 1
+        # equal → no score
+
+    if my_score > opp_score:
+        return "We won"
+    elif my_score < opp_score:
+        return "We lost"
+    else:
+        return "It was a tie"
