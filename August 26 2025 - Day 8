@@ -1,0 +1,17 @@
+def decode(s):
+
+    a=[]
+    b=''
+    for i in range(len(s)):
+
+        if s[i] is '(':
+            a.append(b)
+            b=''
+
+        elif s[i] is ')':
+            b=a.pop()+b[::-1]
+
+        else:
+            b+=s[i]
+
+    return b
