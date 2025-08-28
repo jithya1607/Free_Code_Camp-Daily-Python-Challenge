@@ -1,0 +1,12 @@
+def get_laptop_cost(laptops, budget):
+
+    a=sorted(set(laptops), reverse=True)
+
+    if len(a) >=2 and a[1] <= budget:
+        return a[1]
+
+    for i in a:
+        if i<=budget:
+            return i
+
+    return 0 
