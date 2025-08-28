@@ -1,0 +1,27 @@
+def evaluate(numbers, operators):
+
+    a=numbers[0]
+
+    for i in range (1,len(numbers)):
+        op=operators[(i-1) % len(operators)]
+        num=numbers[i]
+
+        if op is '+':
+            a+=num
+
+        elif op is '-':
+            a-=num
+
+        elif op is '*':
+            a*=num
+
+        elif op is '/':
+            a/=num
+
+        elif op is '%':
+            a%=num
+
+        else:
+            print('Invalid operator')
+
+    return a
