@@ -1,0 +1,16 @@
+def burn_candles(candles, leftovers_needed):
+
+    leftovers=0
+    total_burned=0
+
+    while candles>0:
+        leftovers+=candles
+        total_burned+=candles
+        candles=0
+
+        if leftovers>=leftovers_needed:
+            rem_can=leftovers//leftovers_needed
+            leftovers= leftovers %leftovers_needed
+            candles=rem_can     
+
+    return total_burned
