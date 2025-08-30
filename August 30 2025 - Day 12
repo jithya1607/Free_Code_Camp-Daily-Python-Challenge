@@ -1,0 +1,11 @@
+def find_duplicates(arr):
+
+    a=[]
+
+    for i in range (len(arr)):
+        if arr.count(arr[i])>1:
+            a.append(arr[i])
+
+    b=list(sorted(set(a)))
+
+    return b
