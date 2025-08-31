@@ -1,0 +1,25 @@
+def generate_hex(color):
+
+    import random
+
+    if color not in ['red', 'green', 'blue']:
+        return 'Invalid color'
+
+    r=g=b=0
+
+    if color == 'red':
+        r=random.randint(128,255)
+        g=random.randint(0,127)
+        b=random.randint(0,127)
+
+    elif color == 'green':
+        g=random.randint(128,255)
+        r=random.randint(0,127)
+        b=random.randint(0,127)
+
+    elif color == 'blue':
+        b=random.randint(128,255)
+        r=random.randint(0,127)
+        g=random.randint(0,127)
+
+    return '{:02X}{:02X}{:02X}'.format(r,g,b)
